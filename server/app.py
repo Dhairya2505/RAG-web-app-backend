@@ -10,7 +10,6 @@ try:
 except ImportError as e:
     print(f"ImportError: {e}")
 
-from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -38,7 +37,7 @@ def simple_python_function(query):
         model_name="BAAI/bge-small-en-v1.5"
     )
 
-    documents = SimpleDirectoryReader("./").load_data()
+    documents = SimpleDirectoryReader("uploads/").load_data()
     index = VectorStoreIndex.from_documents(
         documents,
     )

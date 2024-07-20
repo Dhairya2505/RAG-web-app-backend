@@ -44,7 +44,7 @@ def simple_python_function(query):
     query_engine = index.as_query_engine()
 
     response =  query_engine.query(f"{query}")
-    return response.to_dict() if hasattr(response, 'to_dict') else str(response).replace('\n',' ').replace('\\n',' ')
+    return response.to_dict() if hasattr(response, 'to_dict') else str(response)
 
 
 @app.route('/api/execute', methods=['POST'])
